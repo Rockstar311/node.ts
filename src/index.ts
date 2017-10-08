@@ -1,16 +1,15 @@
-import {EventEmitter} from "events";
-import {Main} from "./main";
+
+import * as express from 'express';
+import { Routing } from './node-ts/core/routing'
+import {Express} from "express-serve-static-core";
+import {ROUTINGS} from './routings';
 
 
-let main2 = Main;
-let emitter = new EventEmitter();
+export const APP: Express = express();
 
-emitter.on('click', () => {
-    console.log("click");
-});
-
-emitter.emit('click');
+new Routing(ROUTINGS);
 
 
-
-
+APP.listen(8080, () => {
+    console.log('server strt on port 8080')
+})

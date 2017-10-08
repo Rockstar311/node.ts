@@ -16,8 +16,9 @@
     "nodemon": "^1.12.1",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.2"
-  }
-   "dependencies": {
-    "events": "^1.1.1"
+  },
+  "dependencies": {
+    "fluency-injection": "^1.1.2",
+    "reflect-metadata": "^0.1.10"
   }
 }
