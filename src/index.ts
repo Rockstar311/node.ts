@@ -1,15 +1,13 @@
 
-import * as express from 'express';
-import { Routing } from './node-ts/core/routing'
-import {Express} from "express-serve-static-core";
-import {ROUTINGS} from './routings';
+
+import {AppModule} from "./app.module";
+import {Start} from "./node-ts/core/interface/start";
 
 
-export const APP: Express = express();
 
-new Routing(ROUTINGS);
+// here app is start from root module;
+Start(AppModule);
 
 
-APP.listen(8080, () => {
-    console.log('server strt on port 8080')
-})
+
+

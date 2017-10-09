@@ -12,10 +12,24 @@ var Routing = (function () {
     Routing.prototype.start = function () {
         for (var _i = 0, _a = this.routes; _i < _a.length; _i++) {
             var route = _a[_i];
-            var method = route.method.toLocaleLowerCase();
+            var method = this.checkMethod(route.method);
             var url = route.url;
             var page = fluency_injection_1.bootstrap(route.page);
-            this.APP[method](url, page.callBack);
+            this.APP.route(url)[method](page.callBack);
+        }
+    };
+    Routing.prototype.checkMethod = function (method) {
+        method = method.toLocaleLowerCase();
+        switch (method) {
+            case 'get': {
+                return 'get';
+            }
+            case 'post': {
+                return 'post';
+            }
+            default: {
+                throw new Error('Type method is not correct');
+            }
         }
     };
     return Routing;

@@ -4,4 +4,5 @@ export declare class Routing {
     private routes;
     constructor(routes: Route[]);
     private start();
+    private checkMethod(method);
 }
