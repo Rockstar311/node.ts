@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var fluency_injection_1 = require("fluency-injection");
 var Routing = (function () {
     function Routing(routes, APP) {
         this.APP = APP;
@@ -9,10 +10,11 @@ var Routing = (function () {
     Routing.prototype.start = function () {
         for (var _i = 0, _a = this.routes; _i < _a.length; _i++) {
             var route = _a[_i];
-            console.log(route, "==================");
             var method = route.method.toLocaleLowerCase();
             var url = route.url;
-            console.log(route.page);
+            var page = fluency_injection_1.bootstrap(route.page);
+            page.app = this.APP;
+            this.APP.route(url)[method](page.callBack);
         }
     };
     return Routing;

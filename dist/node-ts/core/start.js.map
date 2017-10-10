@@ -1,1 +1,1 @@
-{"version":3,"file":"start.js","sourceRoot":"","sources":["../../../src/node-ts/core/start.ts"],"names":[],"mappings":";;AACA,mBAA2B,MAAW;IAClC,OAAO,CAAC,GAAG,CAAC,YAAY,CAAC,CAAC;AAK9B,CAAC;AAND,8BAMC"}
+{"version":3,"file":"start.js","sourceRoot":"","sources":["../../../src/node-ts/core/start.ts"],"names":[],"mappings":";;AACA,mBAA2B,MAAW;IAClC,OAAO,CAAC,GAAG,CAAC,YAAY,CAAC,CAAC;IAC1B,IAAI,MAAM,EAAE,CAAC;AACjB,CAAC;AAHD,8BAGC"}
