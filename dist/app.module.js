@@ -10,22 +10,22 @@ var module_creator_1 = require("./node-ts/core/module.creator");
 var about_1 = require("./routing-page/about");
 var first_service_1 = require("./service/first.service");
 var routings_1 = require("./routings");
+var home_1 = require("./routing-page/home");
+var user_1 = require("./routing-page/user");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule.prototype.method = function () {
-    };
     AppModule = __decorate([
-        module_creator_1.moduleCreator({
+        module_creator_1.MainModuleCreator({
             pageRoute: [
-                about_1.RouteAbout
+                about_1.RouteAbout,
+                home_1.RouteHome,
+                user_1.RouteUser,
             ],
             provides: [
                 first_service_1.FirstService
             ],
-            routing: [
-                routings_1.ROUTINGS
-            ],
+            routing: routings_1.ROUTINGS,
             childModules: []
         })
     ], AppModule);

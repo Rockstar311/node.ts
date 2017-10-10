@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
-function Start(module) {
-    module.prototype = express();
+function MainStart(module) {
+    var appMain = express();
+    module.prototype = appMain;
+    appMain.listen(8080, function () {
+        console.log('server start');
+    });
     console.log(module.prototype);
 }
-exports.Start = Start;
-APP.listen(8080, function () {
-    console.log('server start');
-});
+exports.MainStart = MainStart;
 //# sourceMappingURL=start.js.map

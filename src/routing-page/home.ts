@@ -6,7 +6,6 @@ import { Injectable } from 'fluency-injection';
 @Injectable
 export class RouteHome{
 
-
     constructor(private service: FirstService){
        
     }

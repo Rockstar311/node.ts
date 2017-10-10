@@ -1,1 +1,2 @@
-export declare function moduleCreator(value: any): (target: Function) => void;
+import { AppModuleConstructor } from "./interface/app.module";
+export declare function MainModuleCreator(module: AppModuleConstructor): (target: Function) => void;
