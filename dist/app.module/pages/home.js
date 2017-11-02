@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var first_service_1 = require("../services/first.service");
-var module_creator_1 = require("../../node-ts/core/module.creator");
+var first_service_1 = require("../../services/first.service");
+var page_creator_1 = require("../../node-ts/core/page.creator");
 var RouteHome = (function () {
     function RouteHome(service) {
         this.service = service;
@@ -20,7 +20,7 @@ var RouteHome = (function () {
         res.send('home');
     };
     RouteHome = __decorate([
-        module_creator_1.PageCreator(),
+        page_creator_1.PageCreator(),
         __metadata("design:paramtypes", [first_service_1.FirstService])
     ], RouteHome);
     return RouteHome;

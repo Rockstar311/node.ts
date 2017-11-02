@@ -9,17 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var module_creator_1 = require("../../node-ts/core/module.creator");
+var page_creator_1 = require("../../node-ts/core/page.creator");
 var ChildPage1 = (function () {
     function ChildPage1() {
-        console.log(this);
     }
     ChildPage1.prototype.callBack = function (req, res) {
-        console.log('page about ' + req.url);
-        res.send('about');
+        console.log('children root ' + req.url);
+        res.send('children root');
     };
     ChildPage1 = __decorate([
-        module_creator_1.PageCreator(),
+        page_creator_1.PageCreator(),
         __metadata("design:paramtypes", [])
     ], ChildPage1);
     return ChildPage1;

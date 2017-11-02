@@ -20,8 +20,6 @@ export class Routing {
             const url: string = route.url;
             const page: any = bootstrap(route.page);
             page.app = this.APP;
-            // console.log(page);
-            
             this.APP.route(url)[method](page.callBack)
         }
     }

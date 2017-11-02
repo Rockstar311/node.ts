@@ -1,7 +1,5 @@
-import { PageCreator } from '../../node-ts/core/module.creator';
 import { Express } from 'express-serve-static-core';
-
-
+import {PageCreator} from "../../node-ts/core/page.creator";
 
 
 @PageCreator()
@@ -14,8 +12,8 @@ export class ChildPage2 {
     }
 
     public callBack(req: any, res: any){
-        console.log('page about ' + req.url);
-        res.send('about');
+        console.log('children 2 ' + req.url);
+        res.send('children 2');
     }
 
 }

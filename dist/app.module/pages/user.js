@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var module_creator_1 = require("../../node-ts/core/module.creator");
+var page_creator_1 = require("../../node-ts/core/page.creator");
 var RouteUser = (function () {
     function RouteUser() {
     }
@@ -18,7 +18,7 @@ var RouteUser = (function () {
         res.send('user');
     };
     RouteUser = __decorate([
-        module_creator_1.PageCreator(),
+        page_creator_1.PageCreator(),
         __metadata("design:paramtypes", [])
     ], RouteUser);
     return RouteUser;

@@ -15,13 +15,12 @@ var ChildrenModule = (function () {
     }
     ChildrenModule = __decorate([
         module_creator_1.AppModuleCreator({
-            pageRoute: [
+            pagesRoute: [
                 children_page_1.ChildPage1,
-                children2_page_1.ChildPage2
+                children2_page_1.ChildPage2,
             ],
-            provides: [],
             routing: routings_1.ROUTINGS,
-            childModules: []
+            childUrl: '/children'
         })
     ], ChildrenModule);
     return ChildrenModule;

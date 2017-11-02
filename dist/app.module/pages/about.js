@@ -9,21 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var second_service_1 = require("../services/second.service");
-var first_service_1 = require("../services/first.service");
-var module_creator_1 = require("../../node-ts/core/module.creator");
+var second_service_1 = require("../../services/second.service");
+var first_service_1 = require("../../services/first.service");
+var page_creator_1 = require("../../node-ts/core/page.creator");
 var RouteAbout = (function () {
     function RouteAbout(secondService, firstService) {
         this.secondService = secondService;
         this.firstService = firstService;
-        console.log(this);
     }
     RouteAbout.prototype.callBack = function (req, res) {
         console.log('page about ' + req.url);
         res.send('about');
     };
     RouteAbout = __decorate([
-        module_creator_1.PageCreator(),
+        page_creator_1.PageCreator(),
         __metadata("design:paramtypes", [second_service_1.SecondService,
             first_service_1.FirstService])
     ], RouteAbout);

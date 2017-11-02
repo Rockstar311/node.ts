@@ -1,46 +1,57 @@
 import {AppModuleConstructor} from "./interface/app.module";
 import {Routing} from "./routing";
 import * as express from 'express';
-import { MainStart } from './start';
 
 let appMain = express();
-let appChild: any;
-let isUseChild = false;
+let AllPages: any[] = [];
+
 
 appMain.listen(8080, () => {
     console.log('server start')
 });
 
 export function AppModuleCreator(module: AppModuleConstructor) {
-    console.log('module creator');
 
-    new Routing(module.routing, appMain);
-    isUseChild = true;
+// Error when Page imported twice or in two module
+    for (let newPage of module.pagesRoute) {
+        for (let page of AllPages) {
+            if (page.name == newPage.name) {
+                throw new Error("Page imported twice or in two module");
+            }
+        }
+        AllPages.push(newPage);
+    }
+// ===========================================================================
 
-    // console.log(module);
+    // error when Page in Routing is missing in "pagesRoute"
+    for (let routing of module.routing) {
+        let isGood = false;
+        for (let page of module.pagesRoute) {
+            if (routing.page.name == page.name) {
+                isGood = true;
+            }
+        }
+        if (!isGood) throw new Error('Page in Routing is missing in "pagesRoute"');
+        console.log(routing.page.name)
+    }
+    // ===================================================================================
 
-    // for(let childModule of module.childModules){
-    //     // console.log(childModule, 'child module');
-    //     appChild = express();
-    //     appMain.use(childModule.url, appChild);
-    //     // MainStart(childModule.module);
-    // }
-
-
+    if (module.routing && module.routing.length) {
+        if (!module.childUrl) {
+            new Routing(module.routing, appMain);
+        } else {
+            console.log(module, 'children');
+            let appChild = express();
+            appMain.use(module.childUrl, appChild);
+            new Routing(module.routing, appChild);
+        }
+    } else {
+        throw new Error('Routing is empty')
+    }
     return function (target: Function) {
-        target.prototype.app = appMain;
+
     }
 }
 
-export function PageCreator() {
-  
-    return function (target: Function) {
-        // if(!isUseChild){
-            target.prototype.app = appMain;
-        // } else {
-        //     target.prototype.app = appChild;
-        // }
-       
-    }
-}
+
 

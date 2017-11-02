@@ -5,14 +5,11 @@ import { ROUTINGS } from './routings';
 
 
 @AppModuleCreator({
-    pageRoute: [
+    pagesRoute: [
         ChildPage1,
-        ChildPage2
-    ],
-    provides: [
-        
+        ChildPage2,
     ],
     routing: ROUTINGS,
-    childModules: []
+    childUrl: '/children'
 })
 export class ChildrenModule {}

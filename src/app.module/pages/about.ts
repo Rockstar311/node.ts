@@ -1,7 +1,7 @@
-import { SecondService } from '../services/second.service';
-import { FirstService } from '../services/first.service';
-import { PageCreator } from '../../node-ts/core/module.creator';
+import { SecondService } from '../../services/second.service';
+import { FirstService } from '../../services/first.service';
 import { Express } from 'express-serve-static-core';
+import {PageCreator} from "../../node-ts/core/page.creator";
 
 
 
@@ -13,7 +13,7 @@ export class RouteAbout {
       
     constructor( private secondService: SecondService,
     private firstService: FirstService){
-        console.log(this);
+        // console.log(this);
     }
 
     public callBack(req: any, res: any){

@@ -1,5 +1,5 @@
-import { SecondService } from '../services/second.service';
-import { FirstService } from '../services/first.service';
+import { SecondService } from '../../services/second.service';
+import { FirstService } from '../../services/first.service';
 export declare class RouteAbout {
     private secondService;
     private firstService;

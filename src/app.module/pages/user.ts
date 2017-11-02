@@ -1,5 +1,5 @@
 import { Express } from 'express-serve-static-core';
-import { PageCreator } from '../../node-ts/core/module.creator';
+import {PageCreator} from "../../node-ts/core/page.creator";
 
 
 @PageCreator()

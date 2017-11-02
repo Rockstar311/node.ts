@@ -1,4 +1,4 @@
-import { FirstService } from '../services/first.service';
+import { FirstService } from '../../services/first.service';
 export declare class RouteHome {
     private service;
     private app;

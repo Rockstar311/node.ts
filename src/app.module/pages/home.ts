@@ -1,6 +1,6 @@
 import { Express } from 'express-serve-static-core';
-import { FirstService } from '../services/first.service';
-import { PageCreator } from '../../node-ts/core/module.creator';
+import { FirstService } from '../../services/first.service';
+import {PageCreator} from "../../node-ts/core/page.creator";
 
 
 
