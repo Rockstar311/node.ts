@@ -17,6 +17,7 @@ var RouteHome = (function () {
     }
     RouteHome.prototype.callBack = function (req, res) {
         console.log('page home ' + req.url);
+        console.log(req.body);
         res.send('home');
     };
     RouteHome = __decorate([

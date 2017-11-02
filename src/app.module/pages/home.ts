@@ -5,7 +5,7 @@ import {PageCreator} from "../../node-ts/core/page.creator";
 
 
 @PageCreator()
-export class RouteHome{
+export class RouteHome {
 
     private app: Express;
 
@@ -16,6 +16,7 @@ export class RouteHome{
 
     public callBack(req: any, res: any){
         console.log('page home ' + req.url);
+console.log(req.body)
         res.send('home');
     }
 

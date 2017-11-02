@@ -1,8 +1,10 @@
 import {AppModuleConstructor} from "./interface/app.module";
 import {Routing} from "./routing";
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
 
 let appMain = express();
+appMain.use(bodyParser.json())
 let AllPages: any[] = [];
 
 
@@ -42,6 +44,7 @@ export function AppModuleCreator(module: AppModuleConstructor) {
         } else {
             console.log(module, 'children');
             let appChild = express();
+            appChild.use(bodyParser.json())
             appMain.use(module.childUrl, appChild);
             new Routing(module.routing, appChild);
         }

@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var routing_1 = require("./routing");
 var express = require("express");
+var bodyParser = require("body-parser");
 var appMain = express();
+appMain.use(bodyParser.json());
 var AllPages = [];
 appMain.listen(8080, function () {
     console.log('server start');
@@ -38,6 +40,7 @@ function AppModuleCreator(module) {
         else {
             console.log(module, 'children');
             var appChild = express();
+            appChild.use(bodyParser.json());
             appMain.use(module.childUrl, appChild);
             new routing_1.Routing(module.routing, appChild);
         }

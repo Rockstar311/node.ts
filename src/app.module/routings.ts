@@ -5,7 +5,8 @@ import { Route } from './../node-ts/core/interface/route';
 
 
 export const ROUTINGS: Route[] = [
-    {url: ROUTING_PATH.HOME, method: 'GET', page: RouteHome},
+    // {url: ROUTING_PATH.HOME, method: 'GET', page: RouteHome},
+    {url: ROUTING_PATH.HOME, method: 'POST', page: RouteHome},
     {url: ROUTING_PATH.ABOUT, method: 'GET', page: RouteAbout},
 ];
 
